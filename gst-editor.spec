@@ -11,13 +11,13 @@ Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-locale-names.patch
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	gstreamer-devel >= 0.8
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.0.0
-BuildRequires:	pkgconfig
 BuildRequires:	scrollkeeper
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
