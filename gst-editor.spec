@@ -75,9 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-# Clean out files that should not be part of the rpm. (really???)
-rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -95,7 +92,7 @@ scrollkeeper-update -q
 %attr(755,root,root) %{_bindir}/gst-editor
 %attr(755,root,root) %{_bindir}/gst-launch-gui
 %attr(755,root,root) %{_bindir}/gst-inspect-gui
-%{_libdir}/*.so.*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_datadir}/%{name}
 %{_desktopdir}/*
 %{_pixmapsdir}/*
@@ -104,9 +101,10 @@ scrollkeeper-update -q
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/lib*.so
+%{_libdir}/lib*.la
 %{_includedir}/%{name}-%{version}
-%{_libdir}/*.so
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/*.a
+%{_libdir}/lib*.a
