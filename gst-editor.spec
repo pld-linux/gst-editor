@@ -12,6 +12,8 @@ BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnomeui-devel >= 2.0.0
 BuildRequires:	libxml2-devel >= 2.0.0
 BuildRequires:	scrollkeeper
+Requires(post,postun):	/sbin/ldconfig
+Requires(post,postun):	scrollkeeper
 Requires:	gstreamer >= 0.6.0
 Requires:	libglade2 >= 2.0.0
 Requires:	libgnomeui >= 2.0.0
@@ -89,7 +91,7 @@ scrollkeeper-update -q
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING NEWS README ChangeLog INSTALL
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/gst-editor
 %attr(755,root,root) %{_bindir}/gst-launch-gui
 %attr(755,root,root) %{_bindir}/gst-inspect-gui
