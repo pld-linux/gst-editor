@@ -1,0 +1,11 @@
+--- gst-editor-0.8.0/configure.ac.orig	2004-11-08 12:48:51.000000000 +0100
++++ gst-editor-0.8.0/configure.ac	2004-12-21 17:27:28.000000000 +0100
+@@ -125,7 +125,7 @@
+ AC_DEFINE_UNQUOTED([LOCALEDIR], "$LOCALEDIR",
+                    [gettext locale dir])
+ 
+-ALL_LINGUAS="nl no"
++ALL_LINGUAS="nl nb"
+ AM_GLIB_GNU_GETTEXT
+ 
+ AM_CONDITIONAL(HAVE_SCROLLKEEPER,    $HAVE_SCROLLKEEPER)
