@@ -7,6 +7,7 @@ License:	LGPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sf.net/gstreamer/%{name}-%{version}.tar.gz
 # Source0-md5:	53bc099fd0cdc2007cd61f6145ab03e1
+Patch0:		%{name}-desktop.patch
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	gstreamer-devel >= 0.6.0
 BuildRequires:	libglade2-devel >= 2.0.0
@@ -65,6 +66,7 @@ Ten pakiet zawiera statyczne biblioteki gst-editora.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure
