@@ -97,7 +97,6 @@ scrollkeeper-update -q
 %attr(755,root,root) %{_bindir}/gst-inspect-gui
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_datadir}/%{name}
-%{_datadir}/locale
 %{_desktopdir}/*
 %{_pixmapsdir}/*
 %{_omf_dest_dir}/%{name}
