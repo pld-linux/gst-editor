@@ -1,20 +1,21 @@
 Summary:	GStreamer streaming media editor and GUI tools
+Summary(pl):	GStreamer - edytor strumieni medialnych i narzêdzia GUI
 Name:		gst-editor
 Version:	0.5.0
 Release:	1
 License:	LGPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sf.net/gstreamer/%{name}-%{version}.tar.gz
-BuildRequires:	libxml2-devel >= 2.0.0
-BuildRequires:	libgnomeui-devel >= 2.0.0
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	gstreamer-devel >= 0.6.0
 BuildRequires:	libglade2-devel >= 2.0.0
+BuildRequires:	libgnomeui-devel >= 2.0.0
+BuildRequires:	libxml2-devel >= 2.0.0
 BuildRequires:	scrollkeeper
-Requires:	libxml2 >= 2.0.0
-Requires:	libgnomeui >= 2.0.0
 Requires:	gstreamer >= 0.6.0
 Requires:	libglade2 >= 2.0.0
+Requires:	libgnomeui >= 2.0.0
+Requires:	libxml2 >= 2.0.0
 Requires:	scrollkeeper >= 0.3.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,23 +26,39 @@ GStreamer. gst-launch-gui is an extension of gst-launch allowing you
 to dynamically turn on logging domains. gst-inspect-gui is a graphical
 element browser.
 
+%description -l pl
+Ten pakiet zawiera gst-editor oraz kilka narzêdzi graficznych.
+gst-editor to narzêdzie programistyczne do graficznego tworzenia
+aplikacji opartych na GStreamerze. gst-launch-gui to rozszerzenie
+gst-launch pozwalaj±ce dynamicznie w³±czaæ domeny logowania.
+gst-inspect-gui to graficzna przegl±darka elementów.
+
 %package devel
 Summary:	Development headers for the Editor
+Summary(pl):	Pliki nag³ówkowe edytora
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 
 %description devel
-This package provides the necessary development libraries and include
-files to allow you to embed the editor in other applications or call
-upon its functionality.
+This package provides the necessary development include files to allow
+you to embed the editor in other applications or call upon its
+functionality.
+
+%description devel -l pl
+Ten pakiet dostarcza plików nag³ówkowych pozwalaj±cych na osadzanie
+edytora w innych aplikacjach lub wywo³ywania jego funkcjonalno¶ci.
 
 %package static
 Summary:	Static files for the Editor
+Summary(pl):	Statyczne biblioteki edytora
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 
 %description static
 This package contains static files for gst-editor.
+
+%description static -l pl
+Ten pakiet zawiera statyczne biblioteki gst-editora.
 
 %prep
 %setup -q
@@ -52,10 +69,11 @@ This package contains static files for gst-editor.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-# Clean out files that should not be part of the rpm.
+# Clean out files that should not be part of the rpm. (really???)
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
@@ -71,7 +89,7 @@ scrollkeeper-update -q
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING NEWS README ChangeLog INSTALL COPYING
+%doc AUTHORS COPYING NEWS README ChangeLog INSTALL
 %attr(755,root,root) %{_bindir}/gst-editor
 %attr(755,root,root) %{_bindir}/gst-launch-gui
 %attr(755,root,root) %{_bindir}/gst-inspect-gui
