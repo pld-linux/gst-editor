@@ -8,15 +8,20 @@ Group:		Applications/Multimedia
 Source0:	http://gstreamer.freedesktop.org/src/gst-editor/%{name}-%{version}.tar.gz
 # Source0-md5:	00e004ad68f9b90138b87ec729cb1607
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-locale-names.patch
+BuildRequires:	autoconf >= 2.50
+BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 1:2.0.0
-BuildRequires:	gstreamer-devel >= 0.6.0
+BuildRequires:	gstreamer-devel >= 0.8
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
+BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.0.0
+BuildRequires:	pkgconfig
 BuildRequires:	scrollkeeper
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
-Requires:	gstreamer >= 0.6.0
+Requires:	gstreamer >= 0.8
 Requires:	libglade2 >= 2.0.0
 Requires:	libgnomeui >= 2.3.3.1-2
 Requires:	libxml2 >= 2.0.0
@@ -41,7 +46,7 @@ gst-inspect-gui to graficzna przegl±darka elementów.
 Summary:	Development headers for the Editor
 Summary(pl):	Pliki nag³ówkowe edytora
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 This package provides the necessary development include files to allow
@@ -56,7 +61,7 @@ edytora w innych aplikacjach lub wywo³ywania jego funkcjonalno¶ci.
 Summary:	Static files for the Editor
 Summary(pl):	Statyczne biblioteki edytora
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 This package contains static files for gst-editor.
@@ -67,8 +72,25 @@ Ten pakiet zawiera statyczne biblioteki gst-editora.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+
+mv -f po/{no,nb}.po
+
+# AS_VERSION
+head -n 79 aclocal.m4 > acinclude.m4
+# AS_LIBTOOL
+tail -n +1045 aclocal.m4 | head -n 61 >> acinclude.m4
+# AS_AUTOTOOLS_ALTERNATE, GST_DEBUGINFO, AS_COMPILER_FLAG
+tail -n +7184 aclocal.m4 | head -n 130 >> acinclude.m4
+# AS_AC_EXPAND
+tail -n +7374 aclocal.m4 | head -n 43 >> acinclude.m4
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
@@ -77,6 +99,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -89,7 +113,7 @@ scrollkeeper-update -q
 /sbin/ldconfig
 scrollkeeper-update -q
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/gst-editor
