@@ -1,14 +1,14 @@
 diff -urN aaa/gst-editor-0.5.0/gst-editor.desktop gst-editor-0.5.0/gst-editor.desktop
 --- aaa/gst-editor-0.5.0/gst-editor.desktop	2002-09-21 19:29:55.000000000 +0200
-+++ gst-editor-0.5.0/gst-editor.desktop	2003-12-12 18:48:01.000000000 +0100
-@@ -1,10 +1,13 @@
++++ gst-editor-0.5.0/gst-editor.desktop	2003-12-21 18:41:18.000000000 +0100
+@@ -1,10 +1,14 @@
  [Desktop Entry]
  Name=GStreamer Pipeline Editor
  Name[no]=GStreamer Struktur Redigerer
 +Name[pl]=Edytor Strumieni Medialnych
  Comment=Lets you edit GStreamer pipelines
  Comment[no]=Rediger GStreamer strukturer
-+Comment[pl]=Pozwala na edycjê strumieni medialnych GStreamera
++Comment[pl]=Pozwala na edycjÄ™ strumieni medialnych GStreamera
  Exec=gst-editor
 -Terminal=0
 +Terminal=false
@@ -16,17 +16,20 @@ diff -urN aaa/gst-editor-0.5.0/gst-editor.desktop gst-editor-0.5.0/gst-editor.de
  Icon=gst-editor.png
  Categories=Application;Development;
 +Encoding=UTF-8
++# vi: encoding=utf-8
 diff -urN aaa/gst-editor-0.5.0/gst-inspect.desktop gst-editor-0.5.0/gst-inspect.desktop
 --- aaa/gst-editor-0.5.0/gst-inspect.desktop	2002-09-22 14:59:10.000000000 +0200
-+++ gst-editor-0.5.0/gst-inspect.desktop	2003-12-12 18:49:26.000000000 +0100
-@@ -1,10 +1,13 @@
++++ gst-editor-0.5.0/gst-inspect.desktop	2003-12-21 18:41:18.000000000 +0100
+@@ -1,10 +1,14 @@
  [Desktop Entry]
  Name=GStreamer Plugin Inspector
- Name[no]=GStreamer Plugin Inspektør
+-Name[no]=GStreamer Plugin Inspektør
++Name[no]=GStreamer Plugin InspektÅ™r
 +Name[pl]=Kontroler Wtyczek GStreamera
  Comment=Lets you view the details of GStreamer plugins
- Comment[no]=Lar deg se på detaljene fro GStreamer plugins
-+Comment[pl]=Pozwala przegl±daæ detale wtyczek GStreamera
+-Comment[no]=Lar deg se på detaljene fro GStreamer plugins
++Comment[no]=Lar deg se pÄº detaljene fro GStreamer plugins
++Comment[pl]=Pozwala przeglÄ…daÄ‡ detale wtyczek GStreamera
  Exec=gst-inspect-gui
 -Terminal=0
 +Terminal=false
@@ -34,17 +37,20 @@ diff -urN aaa/gst-editor-0.5.0/gst-inspect.desktop gst-editor-0.5.0/gst-inspect.
  Icon=gst-inspect.png
  Categories=Application;Development;
 +Encoding=UTF-8
++# vi: encoding=utf-8
 diff -urN aaa/gst-editor-0.5.0/gst-launch.desktop gst-editor-0.5.0/gst-launch.desktop
 --- aaa/gst-editor-0.5.0/gst-launch.desktop	2002-09-22 14:59:10.000000000 +0200
-+++ gst-editor-0.5.0/gst-launch.desktop	2003-12-12 18:50:49.000000000 +0100
-@@ -1,10 +1,13 @@
++++ gst-editor-0.5.0/gst-launch.desktop	2003-12-21 18:41:49.000000000 +0100
+@@ -1,10 +1,14 @@
  [Desktop Entry]
  Name=GStreamer Pipeline Runner
- Name[no]=GStreamer Kontruksjons Kjører
+-Name[no]=GStreamer Kontruksjons Kjører
++Name[no]=GStreamer Kontruksjons KjÅ™rer
 +Name[pl]=Uruchamianie Strumieni Medialnych GStreamera
  Comment=Lets you run simple GStreamer pipelines
- Comment[no]=Lar kjøre enkle GStreamer konstruksjoner
-+Comment[pl]=Pozwala uruchamiaæ proste strumienie medialne GStreamera
+-Comment[no]=Lar kjøre enkle GStreamer konstruksjoner
++Comment[no]=Lar kjÅ™re enkle GStreamer konstruksjoner
++Comment[pl]=Pozwala uruchamiaÄ‡ proste strumienie medialne GStreamera
  Exec=gst-launch-gui
 -Terminal=0
 +Terminal=false
@@ -52,3 +58,4 @@ diff -urN aaa/gst-editor-0.5.0/gst-launch.desktop gst-editor-0.5.0/gst-launch.de
  Icon=gst-launch.png
  Categories=Application;Development;
 +Encoding=UTF-8
++# vi: encoding=utf-8
