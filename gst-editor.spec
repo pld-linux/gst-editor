@@ -1,12 +1,12 @@
 Summary:	GStreamer streaming media editor and GUI tools
 Summary(pl):	GStreamer - edytor strumieni medialnych i narzêdzia GUI
 Name:		gst-editor
-Version:	0.7.0
-Release:	0.1
+Version:	0.8.0
+Release:	1
 License:	LGPL
 Group:		Applications/Multimedia
 Source0:	http://gstreamer.freedesktop.org/src/gst-editor/%{name}-%{version}.tar.gz
-# Source0-md5:	4e65e5b706bc12a996321ba393693212
+# Source0-md5:	00e004ad68f9b90138b87ec729cb1607
 Patch0:		%{name}-desktop.patch
 BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	gstreamer-devel >= 0.6.0
@@ -97,6 +97,7 @@ scrollkeeper-update -q
 %attr(755,root,root) %{_bindir}/gst-inspect-gui
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_datadir}/%{name}
+%{_datadir}/locale
 %{_desktopdir}/*
 %{_pixmapsdir}/*
 %{_omf_dest_dir}/%{name}
