@@ -6,6 +6,7 @@ Release:	1
 License:	LGPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sf.net/gstreamer/%{name}-%{version}.tar.gz
+# Source0-md5:	53bc099fd0cdc2007cd61f6145ab03e1
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	gstreamer-devel >= 0.6.0
 BuildRequires:	libglade2-devel >= 2.0.0
