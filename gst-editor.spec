@@ -8,7 +8,7 @@ Group:		Applications/Multimedia
 Source0:	http://gstreamer.freedesktop.org/src/gst-editor/%{name}-%{version}.tar.gz
 # Source0-md5:	4e65e5b706bc12a996321ba393693212
 Patch0:		%{name}-desktop.patch
-BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	gstreamer-devel >= 0.6.0
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
