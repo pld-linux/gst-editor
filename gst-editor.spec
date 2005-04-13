@@ -2,7 +2,7 @@ Summary:	GStreamer streaming media editor and GUI tools
 Summary(pl):	GStreamer - edytor strumieni medialnych i narzêdzia GUI
 Name:		gst-editor
 Version:	0.8.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Applications/Multimedia
 Source0:	http://gstreamer.freedesktop.org/src/gst-editor/%{name}-%{version}.tar.gz
@@ -12,20 +12,21 @@ Patch1:		%{name}-locale-names.patch
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 1:2.0.0
-BuildRequires:	gstreamer-devel >= 0.8
-BuildRequires:	libglade2-devel >= 2.0.0
-BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
+BuildRequires:	gtk+2-devel >= 2:2.6.4
+BuildRequires:	gstreamer-devel >= 0.8.9
+BuildRequires:	libglade2-devel >= 1:2.5.1
+BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel >= 2.0.0
+BuildRequires:	libxml2-devel >= 1:2.6.19
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
-Requires:	gstreamer >= 0.8
-Requires:	libglade2 >= 2.0.0
-Requires:	libgnomeui >= 2.3.3.1-2
-Requires:	libxml2 >= 2.0.0
+Requires:	gstreamer >= 0.8.9
+Requires:	libglade2 >= 1:2.5.1
+Requires:	libgnomeui >= 2.10.0-2
+Requires:	libxml2 >= 1:2.6.19
 Requires:	scrollkeeper >= 0.3.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -108,11 +109,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-scrollkeeper-update -q
+%scrollkeeper_update_post
 
 %postun
 /sbin/ldconfig
-scrollkeeper-update -q
+%scrollkeeper_update_postun
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
