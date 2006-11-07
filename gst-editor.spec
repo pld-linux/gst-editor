@@ -123,7 +123,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gst-inspect-gui
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_datadir}/%{name}
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
 %{_omf_dest_dir}/%{name}
 %{_mandir}/man1/*
