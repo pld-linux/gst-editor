@@ -1,5 +1,5 @@
 Summary:	GStreamer streaming media editor and GUI tools
-Summary(pl):	GStreamer - edytor strumieni medialnych i narzêdzia GUI
+Summary(pl.UTF-8):   GStreamer - edytor strumieni medialnych i narzÄ™dzia GUI
 Name:		gst-editor
 Version:	0.8.0
 Release:	3
@@ -37,16 +37,16 @@ GStreamer. gst-launch-gui is an extension of gst-launch allowing you
 to dynamically turn on logging domains. gst-inspect-gui is a graphical
 element browser.
 
-%description -l pl
-Ten pakiet zawiera gst-editor oraz kilka narzêdzi graficznych.
-gst-editor to narzêdzie programistyczne do graficznego tworzenia
+%description -l pl.UTF-8
+Ten pakiet zawiera gst-editor oraz kilka narzÄ™dzi graficznych.
+gst-editor to narzÄ™dzie programistyczne do graficznego tworzenia
 aplikacji opartych na GStreamerze. gst-launch-gui to rozszerzenie
-gst-launch pozwalaj±ce dynamicznie w³±czaæ domeny logowania.
-gst-inspect-gui to graficzna przegl±darka elementów.
+gst-launch pozwalajÄ…ce dynamicznie wÅ‚Ä…czaÄ‡ domeny logowania.
+gst-inspect-gui to graficzna przeglÄ…darka elementÃ³w.
 
 %package devel
 Summary:	Development headers for the Editor
-Summary(pl):	Pliki nag³ówkowe edytora
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe edytora
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -55,20 +55,20 @@ This package provides the necessary development include files to allow
 you to embed the editor in other applications or call upon its
 functionality.
 
-%description devel -l pl
-Ten pakiet dostarcza plików nag³ówkowych pozwalaj±cych na osadzanie
-edytora w innych aplikacjach lub wywo³ywania jego funkcjonalno¶ci.
+%description devel -l pl.UTF-8
+Ten pakiet dostarcza plikÃ³w nagÅ‚Ã³wkowych pozwalajÄ…cych na osadzanie
+edytora w innych aplikacjach lub wywoÅ‚ywania jego funkcjonalnoÅ›ci.
 
 %package static
 Summary:	Static files for the Editor
-Summary(pl):	Statyczne biblioteki edytora
+Summary(pl.UTF-8):   Statyczne biblioteki edytora
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 This package contains static files for gst-editor.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Ten pakiet zawiera statyczne biblioteki gst-editora.
 
 %prep
