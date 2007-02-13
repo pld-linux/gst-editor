@@ -1,5 +1,5 @@
 Summary:	GStreamer streaming media editor and GUI tools
-Summary(pl.UTF-8):   GStreamer - edytor strumieni medialnych i narzędzia GUI
+Summary(pl.UTF-8):	GStreamer - edytor strumieni medialnych i narzędzia GUI
 Name:		gst-editor
 Version:	0.8.0
 Release:	3
@@ -46,7 +46,7 @@ gst-inspect-gui to graficzna przeglądarka elementów.
 
 %package devel
 Summary:	Development headers for the Editor
-Summary(pl.UTF-8):   Pliki nagłówkowe edytora
+Summary(pl.UTF-8):	Pliki nagłówkowe edytora
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -61,7 +61,7 @@ edytora w innych aplikacjach lub wywoływania jego funkcjonalności.
 
 %package static
 Summary:	Static files for the Editor
-Summary(pl.UTF-8):   Statyczne biblioteki edytora
+Summary(pl.UTF-8):	Statyczne biblioteki edytora
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
