@@ -11,7 +11,7 @@ Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-locale-names.patch
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel >= 2:2.6.4
 BuildRequires:	gstreamer08x-devel >= 0.8.9
 BuildRequires:	libglade2-devel >= 1:2.5.1
